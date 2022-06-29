@@ -1,20 +1,26 @@
-﻿using System;
+﻿using _02_Exercicio.Interfaces;
+using System;
 
 namespace _02_Exercicio.Classes
 {
     public class Pedido
     {
-        private ConsoleLogger log = new ConsoleLogger();
+        private ILogger _log;
+
+        public Pedido(ILogger log)
+        {
+            _log = log;
+        }
 
         public virtual void AdicionarPedido() 
         {
             try
             {
-                log.Registrar($"Pedido Incluindo em : {DateTime.Now}");
+                _log.Registrar($"Pedido Incluindo em : {DateTime.Now}");
             }
             catch (Exception ex) 
             {
-                log.Registrar($"{ex} - {DateTime.Now}");
+                _log.Registrar($"{ex} - {DateTime.Now}");
             }
         }
 
