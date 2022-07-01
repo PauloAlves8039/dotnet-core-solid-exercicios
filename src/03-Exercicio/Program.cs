@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _03_Exercicio.Classes;
+using _03_Exercicio.Interfaces;
+using System;
 
 namespace _03_Exercicio
 {
@@ -6,7 +8,15 @@ namespace _03_Exercicio
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("***** EXERCÍCIO 01 *****");
+            Console.WriteLine("***** EXERCÍCIO 03 *****");
+
+            ICalcularImpostoPais calc = new CalculaImpostoBrazil();
+            calc.TotalRenda = 1000;
+            calc.TotalDeducao = 100;
+
+            var calcImp = new CalcularImposto();
+            var valorTotalImposto = calcImp.Calcular(calc);
+            Console.WriteLine($"Brasil {valorTotalImposto}");
 
             Console.ReadLine();
         }
