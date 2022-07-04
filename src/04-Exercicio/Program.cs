@@ -7,7 +7,7 @@ namespace _04_Exercicio
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("***** EXERCÍCIO 03 *****");
+            Console.WriteLine("***** EXERCÍCIO 04 *****");
 
             Produto celularSamSung = new Celular(new PromocaoDiaMaes());
             celularSamSung.Nome = "Celular SamSumg Galaxy M10";
