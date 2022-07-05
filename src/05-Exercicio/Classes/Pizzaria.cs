@@ -3,16 +3,18 @@
     public class Pizzaria
     {
         private Pizza pizza;
+        PizzaFactory factory;
+
+        public Pizzaria(PizzaFactory factory)
+        {
+            this.factory = factory;
+        }
+
         public void CriarPizza(string tipo)
         {
-            if (tipo.Equals("mussarela"))
-            {
-                pizza = new PizzaMussarela();
-            }
-            else if (tipo.Equals("calabresa"))
-            {
-                pizza = new PizzaCalabresa();
-            }
+            pizza = factory.CriarPizza(tipo);
+            pizza.AssarPizza();
+            pizza.DeliveryPizza();
         }
     }
 }
