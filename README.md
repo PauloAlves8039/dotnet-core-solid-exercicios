@@ -52,6 +52,30 @@ inversão da dependência.
 
 <hr>
 
+### :book: [Exercício 3](https://github.com/PauloAlves8039/dotnet-core-solid-exercicios/tree/master/src/03-Exercicio)
+
+### **Cenário**
+
+No desenvolvimento de uma calculadora on-line de impostos os usuários podem visitar uma página web e especificar suas receitas, deduções e calcular o imposto
+a pagar.
+
+Para isso foi criada a classe `CalcularImposto` e definiu o método `Calcular()` que usa como parâmetros `Valor`, `Dedução` e o `Pais` do usuário, no qual para 
+cada pais existe uma regra para calcular o imposto.
+
+O método `Calcular()` determina o valor do imposto subtraindo o valor da renda das deduções totais obtendo o valorBase para o cálculo, conforme o pais do usuário
+é selecionado, a regra para calcular o imposto é retornado na variável valorImposto.
+
+### **Solução**
+
+Houve uma violação do princípio aberto/fechado na classe `CalcularImposto`, a lógica implementada na classe usa um bloco `if/else` causando um forte acoplamento,
+e a inclusão de novos países no cálculo do imposto vai ter que ser feita alterando a classe existente, dessa forma a classe não está fechada para alteração
+e nem pode ser estendida.
+
+Para resolver o problema foi criada uma interface `ICalcularImpostoPais` onde são definidas as propriedade da renda e da dedução e o método `CalcularValorImposto()`
+que deverá ser implementado por classes concretas para o cálculo do imposto para cada pais, com isso é feito o uso do princípio `OCP - Open-Closed Principle`.
+
+<hr>
+
 ## :floppy_disk: Clonar Repositório
 
 `git clone https://github.com/PauloAlves8039/dotnet-core-solid-exercicios.git`
