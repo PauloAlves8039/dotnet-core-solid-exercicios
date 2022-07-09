@@ -1,8 +1,8 @@
 <h1 align="center">Exercícios SOLID</h1>
 
-Aplicação console desenvolvida para fins acadêmicos, com o objetivo de implementar exercícios utilizando boas práticas e os princípios do SOLID.
+## :computer: Projeto
 
-O código fonte dos exercícios foram baseados no curso [C# - Aplicando Princípios SOLID na prática](https://www.udemy.com/course/fullstack-vuejs-dotnetcore-efcore/).
+Aplicação console desenvolvida para fins acadêmicos, com o objetivo de implementar exercícios utilizando boas práticas e os princípios do SOLID,o código fonte dos exercícios foram baseados no curso [C# - Aplicando Princípios SOLID na prática](https://www.udemy.com/course/fullstack-vuejs-dotnetcore-efcore/).
 
 ## :blue_book: Lista de Exercícios
 
@@ -73,6 +73,21 @@ e nem pode ser estendida.
 
 Para resolver o problema foi criada uma interface `ICalcularImpostoPais` onde são definidas as propriedade da renda e da dedução e o método `CalcularValorImposto()`
 que deverá ser implementado por classes concretas para o cálculo do imposto para cada pais, com isso é feito o uso do princípio `OCP - Open-Closed Principle`.
+
+<hr>
+
+### :book: [Exercício 4](https://github.com/PauloAlves8039/dotnet-core-solid-exercicios/tree/master/src/04-Exercicio)
+
+### **Cenário**
+
+Uma loja pretende aplicar uma política de descontos no preço dos seus produtos bem agressiva, onde cada produto poderá de acordo com as datas especiais docalendário
+(dia das mães, dia dos pais, dia das crianças, páscoa, natal etc...) ter um preço promocional, neste cenário teríamos para cada data um tipo de desconto diferente que deverá ser implementado de forma separada.
+
+### **Solução**
+
+Para resolver esse problema foi criada a classe abstrata `Produto` para servir como base dos produtos definindo as propriedades `Nome` e `Preço`, houve a adição das classes `Perfume` e `Celular` para representação dos produtos recebendo a implementação da classe `Produto`.
+
+Nesse exercício foi feito uso dos principios `SRP`, `OCP`, `DIP`e `ISP - Interface Segregation Principle`, foi adicionada a interface `IPromocao` com o método `Desconto()`, essa interface foi implementada em cada classe concreta destinada a uma data comemorativa com o objetivo de aplicar descontos especificos para cada uma dessas datas. 
 
 <hr>
 
