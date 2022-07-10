@@ -91,6 +91,30 @@ Nesse exercício foi feito uso dos principios `SRP`, `OCP`, `DIP`e `ISP - Interf
 
 <hr>
 
+### :book: [Exercício 5](https://github.com/PauloAlves8039/dotnet-core-solid-exercicios/tree/master/src/05-Exercicio)
+
+### **Cenário**
+
+Em um sistema voltado a uma pizzaria é utilizada a classe `Pizzaria` que é responsável por informações destinadas a crião de pizzas usando o método `CriarPizza()`,
+no qual recebe uma `string` para indicar o tipo da pizza que deverá ser criado.
+
+Nesse sistema foi identificado problemas como `Forte Acoplamento`, as violações do `DRY - Don’t Repeat Yourself`, `DIP` e o `OCP` na classe `Pizzaria`.
+
+### **Solução**
+
+Foi criada a classe abstrata `Pizza` para representar uma classe base que recebe a propriedade `Nome`, um construtor para a inicialização desta propriedade e os métodos `AssarPizza()` e `DeliveryPizza()`, essa classe `Pizza` teve implementações feitas nas classes concretas `PizzaMussarela` e `PizzaCalabresa` que são responsáveis pelo tipo da pizza escolhida.
+
+A classe `PizzaFactory` foi adicionada com o proposito de encapsular o objeto responsável pela criação das pizzas usando o método `CriarPizza(string tipo)`, isso permite a adição de novas classes para a criação das pizzas na medida que o projeto for crescendo, a lógica voltada para a criação das pizzas na classe `Pizza` passa
+a ser utilizada na classe `PizzaFactory` desacoplando o código.
+
+<hr>
+
+## :wrench: Recursos Utilizados
+
+- [Microsoft Visual Studio Enterprise 2019 v16.11.15](https://visualstudio.microsoft.com/pt-br/)
+- [.NET 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)
+- [C#](https://docs.microsoft.com/pt-br/dotnet/csharp/getting-started/)
+
 ## :floppy_disk: Clonar Repositório
 
 `git clone https://github.com/PauloAlves8039/dotnet-core-solid-exercicios.git`
