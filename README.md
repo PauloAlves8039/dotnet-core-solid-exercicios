@@ -111,7 +111,7 @@ a ser utilizada na classe `PizzaFactory` desacoplando o código.
 
 ## :wrench: Recursos Utilizados
 
-- [Microsoft Visual Studio Enterprise 2019 v16.11.15](https://visualstudio.microsoft.com/pt-br/)
+- [Microsoft Visual Studio 2019 v16.11.15](https://visualstudio.microsoft.com/pt-br/)
 - [.NET 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)
 - [C#](https://docs.microsoft.com/pt-br/dotnet/csharp/getting-started/)
 
